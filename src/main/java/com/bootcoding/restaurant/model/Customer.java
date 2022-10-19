@@ -1,5 +1,7 @@
 package com.bootcoding.restaurant.model;
 
+import java.util.Date;
+
 public class Customer {
         private long customerId;
         private String name;
@@ -8,6 +10,8 @@ public class Customer {
         private String city;
         private String state;
         private String emailId;
+
+        private Date createdAt;
 
         public String getName(){
             return name;
@@ -65,6 +69,14 @@ public class Customer {
         public void setCustomerId(long customerId) {
             this.customerId = customerId;
         }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
 }
 
 
