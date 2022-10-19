@@ -1,5 +1,7 @@
 package com.bootcoding.restaurant.app;
 
+import com.bootcoding.restaurant.dao.CustomerDAO;
+import com.bootcoding.restaurant.dao.DAOService;
 import com.bootcoding.restaurant.model.Customer;
 import com.bootcoding.restaurant.model.Order;
 import com.bootcoding.restaurant.model.Vendor;
@@ -8,6 +10,14 @@ import java.util.Date;
 
 public class Application {
     public static void main(String[] args) {
+        DAOService daoService= new DAOService();
+        daoService.getData();
+
+        CustomerDAO customerDAO= new CustomerDAO();
+        customerDAO.createTable();
+
+    }
+    public void testData(){
         Customer ramesh = new Customer();
         ramesh.setName("Ramesh");
         ramesh.setCity("Nagpur");
@@ -53,6 +63,7 @@ public class Application {
         System.out.println("Total Amount: " + order.getTotalAmount());
         System.out.println("Order Date: " + order.getOrderDate());
         System.out.println("Order Delivery Address : " + order.getDeliveryAddress());
+
 
     }
 }
