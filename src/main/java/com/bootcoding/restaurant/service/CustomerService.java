@@ -1,5 +1,6 @@
 package com.bootcoding.restaurant.service;
 
+import com.bootcoding.restaurant.dao.CustomerDAO;
 import com.bootcoding.restaurant.model.Customer;
 import com.bootcoding.restaurant.utils.AddressGenerator;
 import com.bootcoding.restaurant.utils.EmailIdGenerator;
@@ -19,6 +20,9 @@ public class CustomerService
             customer.setCity("Nagpur");
             customer.setState("Maharashtra");
             customer.setPhoneNumber(PhoneNumberGenerator.getPhoneNumber());
+
+            CustomerDAO CD=new CustomerDAO();
+            CD.createCustomer(customer);
 
 
             System.out.println(" Customer Details: ");
